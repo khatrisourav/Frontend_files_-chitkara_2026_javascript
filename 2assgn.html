@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Character Counter</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    textarea {
+      width: 120px;
+      height: 20px;
+      padding: 10px;
+      font-size: 16px;
+      resize: none;
+    }
+
+    p {
+      margin-top: 1px;
+      font-size: 8px;
+      font-weight: bold;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Character Counter</h2>
+
+
+  <textarea id="text" maxlength="100" placeholder="Type here..."></textarea>
+
+
+  <p id="counter">Remaining: 100</p>
+
+  <script>
+    const text = document.getElementById("text");
+    const counter = document.getElementById("counter");
+
+    //const maxLength = 100;
+
+   text.addEventListener("input", function (event) {
+      let currentLength = text.value.length;
+      console.log(currentLength)
+      console.log(event)
+      let remaining = maxLength - currentLength;
+
+      // Update text
+      counter.textContent = "Remaining: " + remaining;
+
+      // Change color when limit reached
+      if (remaining === 0) {
+        counter.style.color = "red";
+      } else {
+        counter.style.color = "black";
+      }
+      
+    });
+  </script>
+
+</body>
+</html>
