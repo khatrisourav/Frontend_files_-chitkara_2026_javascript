@@ -5,21 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 
+  <style >
+    #box {
+      height: 50px;
+      width: 50px;
+      border: 2px solid black;
+    }
+    img{
+      height: 50px;
+      width: 50px;
+    }
+  </style>
+
   <script>
-  
+    console.log("Start script")
+
+    document.addEventListener('DOMContentLoaded', function(){
+    
+      console.log("Dom is ready ")
+    })
+    window.addEventListener('load', function(){
+     
+      console.log("Webpage is ready ")
+    })
+
+    console.log('end script')
   </script>
 </head>
 <body>
- <h1>Welcome</h1>
- <input type="text" oninput="d(event)">
 
- <script>
-  function d (event) {
-    console.log(event.data
-      
-    )
-  }
- </script>
+
+
+<h1 id="heading">Welcome to our university</h1>
+
+<img src="./closeup-scarlet-macaw-from-side-view-scarlet-macaw-closeup-head.jpg" alt="">
 
 </body>
 </html>
