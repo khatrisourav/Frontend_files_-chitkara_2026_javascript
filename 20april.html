@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form id="myform">
+      <input
+        type="text
+        
+        "
+        name=""
+        id="password"
+        placeholder="password"
+      />
+      <button type="submit">Submit</button>
+    </form>
+    <span id="output"> </span>
+    <script>
+      const sp = document.getElementById("output");
+      document
+        .getElementById("myform")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          const pas = document.getElementById("password").value;
+          console.log(pas, typeof pas);
+          const size = pas.length;
+          console.log(size);
+
+          if (size >= 6) {
+            sp.innerText = "Valid input";
+            sp.style.color = "green";
+          } else {
+            sp.innerText = "inValid input";
+            sp.style.color = "red";
+          }
+        });
+    </script>
+  </body>
+</html>

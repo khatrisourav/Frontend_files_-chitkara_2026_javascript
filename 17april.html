@@ -1,0 +1,51 @@
+<!-- <!-- <!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="box"></ul>
+    <script>
+      let data = " ";
+      let fragment = document.createDocumentFragment();
+      let unorderd = document.getElementById("box");
+      for (let i = 0; i < 500; i++) {
+        // document.getElementById("box").innerHTML =
+        //   document.getElementById("box").innerHTML + `<li> ${i} </li>`;
+        const li = document.createElement('li')
+        li.innerText= i;
+        fragment.appendChild(li)
+     
+      }
+    //   unorderd.innerHTML = data;
+    unorderd.appendChild(fragment)
+    </script>
+  </body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>
+    Welcome to our univeristy 
+  </h1>
+  <button onclick="go()">Go to new page</button>
+  <button >Go to new page1</button>
+
+  <script>
+    console.log(screen.width)
+    function go (){
+   window.location.href= "./15april.html"
+    }
+  </script>
+</body>
+</html> -->
