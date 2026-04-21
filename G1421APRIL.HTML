@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>shahru2G3457.beai25@chitkara.edu.in</h1>
+    <form action="">
+      <input type="text" name="" id="pass" placeholder="email" />
+      <button type="submit">submit</button>
+    </form>
+    <span id="sp"></span>
+
+    <script>
+      document.querySelector("form").addEventListener("submit", function (evt) {
+        evt.preventDefault();
+        console.log("hello world");
+        const str = document.getElementById("pass").value;
+        const span = document.getElementById("sp");
+        const reg = /^[a-zA-Z0-9]+\.[a-zA-Z0-9]+@chitkara.edu.in/;
+        const bo = reg.test(str);
+        console.log(bo);
+        if (bo) {
+          span.innerText = "Valid input";
+          span.style.color = "green";
+        } else {
+          span.innerText = "invalid input";
+          span.style.color = "red";
+        }
+      });
+    </script>
+  </body>
+</html>
