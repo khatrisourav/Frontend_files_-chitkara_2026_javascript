@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <form action="">
+      <input  id="mail" type="text"  />
+       <input type="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"> 
+      <button type="submit">submit</button>
+    </form> -->
+    <!-- 
+    <form >
+      <input type="text" name="" id="" placeholder="name" pattern="\w+">
+      <button type="submit"> submit</button>
+    </form> -->
+
+    <form id="myform">
+      <input
+        type="text"
+        name=""
+        id="email"
+        placeholder="email"
+        pattern="^[a-zA-Z0-9]+\.[a-zA-Z0-9]+@chitkara.edu.in"
+      />
+      <input type="text" placeholder="phonenumber" id="phone" />
+      <button type="submit">Submit</button>
+    </form>
+    <span id="sp"></span>
+
+    <script>
+      // // const span = document.getElementById("sp");
+      // document
+      //   .getElementById("myform")
+      //   .addEventListener("submit", function (evt) {
+      //     evt.preventDefault();
+      //     const str = document.getElementById("pass").value;
+
+      //    const regex=  /\d\D\s/
+
+      //     if (regex.test(str)) {
+      //       span.innerText= "Valid input";
+      //       span.style.color = "green"
+      //     }
+      //     else {
+      //       span.innerText= "Invlaid input";
+      //       span.style.color = "red"
+
+      //     }
+      //   });
+      document.querySelector("form").addEventListener("submit", function (evt) {
+        const span = document.getElementById("sp")
+        localStorage.clear();
+        evt.preventDefault();
+        const email = document.getElementById("email").value;
+        const phone = document.getElementById("phone").value;
+        console.log(email, phone);
+        let obj = {
+          email: email,
+          phonenumber: phone,
+        };
+        console.log(obj);
+        const jsonstring = JSON.stringify(obj);
+        console.log(jsonstring, typeof jsonstring);
+
+        localStorage.setItem("G13", jsonstring);
+
+        const getjson = localStorage.getItem("G13");
+        console.log(`this is string from local storage ${getjson}`);
+         const obj1 = JSON.parse(getjson)
+         console.log(obj1)
+        span.innerText= obj1.email
+        span.style.color= "green"
+
+      });
+    </script>
+  </body>
+</html>

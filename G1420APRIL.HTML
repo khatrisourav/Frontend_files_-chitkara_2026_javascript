@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -21,5 +21,51 @@
     <h1 id="head">Welcome</h1>
     <img src="closeup-scarlet-macaw-from-side-view-scarlet-macaw-closeup-head.jpg" alt="">
   
+  </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="">
+      <input type="text" id="name" placeholder="name" />
+      <input type="text" id="phone" placeholder="phone" />
+      <input type="text" id="password" placeholder="password" />
+      <button type="submit">submit</button>
+    </form>
+
+    <span id="username"> </span>
+    <script>
+      document.querySelector("form").addEventListener("submit", function (evt) {
+        localStorage.clear();
+        evt.preventDefault();
+        const uname = document.getElementById("name").value;
+        const phone = document.getElementById("phone").value;
+        const pass = document.getElementById("password").value;
+        let obj = {
+          uname,
+          phone,
+          pass,
+        };
+
+        const str = JSON.stringify(obj);
+        localStorage.setItem("user", str);
+        const data = localStorage.getItem("user");
+        display(data);
+      });
+
+      function display(data) {
+        const sp = document.getElementById("username");
+
+        const obj = JSON.parse(data);
+        sp.innerText= obj.uname;
+        sp.style.innerText= "green"
+      }
+    </script>
   </body>
 </html>
