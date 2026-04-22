@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <h1>22 html</h1>
+    <button>Reload</button> -->
+
+    <form id="myform">
+      <input type="text" placeholder="email" id="email" />
+      <input type="text" placeholder="password" id="password" />
+      <button type="submit">Submit</button>
+    </form>
+    <span id="sp"></span>
+
+    <script>
+      // console.log(window)
+      // console.log(window.navigator.userAgent)
+
+      // console.log(navigator.platform)
+
+      // console.log(navigator.language)
+      // console.log(navigator.onLine)
+      // document.querySelector("button").addEventListener('click', function(){
+      //     window.location.reload()
+      // })
+
+      // console.log(window.location.host)
+
+      //  let age =    prompt("enter the age ")
+
+      //  let t = confirm("Your age is corrrect or not  this is your age " + age)
+      //  console.log(t)
+
+      const span = document.getElementById("sp")
+
+      document.querySelector("form").addEventListener("submit", function (evt) {
+        localStorage.clear()
+        evt.preventDefault();
+        console.log("hlo");
+        const em = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        console.log(em, password);
+        let user = {
+          email: em,
+          password: password,
+        };
+        console.log(user);
+        const str = JSON.stringify(user);
+        console.log(str);
+        localStorage.setItem("G12", str);
+       const getlocaldata=  localStorage.getItem("G12");
+     const user1 =   JSON.parse(getlocaldata)
+     console.log(user1)
+
+       span.innerText= getlocaldata;
+
+      });
+    </script>
+  </body>
+</html>
