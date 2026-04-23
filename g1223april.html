@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btn1">Start Timer</button>
+    <button id="btn2">Stop timer</button>
+
+    <h3>Time in seconds : <span id="sp"></span></h3>
+    <script>
+      //      console.log("Start");
+
+      // setTimeout(() => {
+      //     console.log("Hello after 2 seconds");
+      // }, 2000);
+
+      // setTimeout(() => {
+      //     console.log("Hello after 0 seconds");
+      // }, 0);
+      // setTimeout(() => {
+      //     console.log("Hello after 0.5 seconds");
+      // }, 500);
+
+      // console.log("End");
+
+      // console.log("Start");
+
+      // let t = setin(() => {
+      //     console.log("This will NOT run");
+      // }, 3000);
+
+      // console.log("Timer ID:", t);
+
+      // // Cancel the timeout before it executes
+      // clearTimeout(t);
+
+      // console.log("Timeout cleared");
+
+      // console.log("End");
+
+      //   function d() {
+      //     console.log("Hello");
+      //   }
+      //    let r =    setInterval(d, 5000);
+      //     let r1 =    setInterval(d, 5000);
+      //    console.log(r , r1)
+      //    clearInterval(r)
+
+      // let d =  setInterval( ()=>{
+      //   console.log("hello world")
+      // },5000)
+      // clearInterval(d)
+
+      // console.log("Start script")
+      // setTimeout(()=>{
+      //   console.log("A")
+      // },1000)
+
+      // console.log("welcome")
+      // setTimeout(()=>{
+      //   console.log("B")
+      // },500)
+
+      // console.log("Chitkara")
+      // setTimeout(()=>{
+      //   console.log("C")
+      // },200)
+
+      // setTimeout(()=>{
+      //   console.log("D")
+      // },0)
+
+      document.getElementById("btn1").addEventListener('click', function(){
+       const span =  document.getElementById("sp")
+       let count = 1;
+       function seconds(){
+        span.innerText= count;
+        count++;
+       }
+
+
+
+       setInterval(seconds, 1000)
+      })
+    </script>
+  </body>
+</html>
