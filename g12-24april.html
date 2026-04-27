@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Assignment 1</title>
+</head>
+<body>
+
+<h2>Assignment 1: Local Storage Practice</h2>
+
+<p>Name: <span id="nameOutput"></span></p>
+<p>Age: <span id="ageOutput"></span></p>
+<p>City: <span id="cityOutput"></span></p>
+<p>Course: <span id="courseOutput"></span></p>
+<p>College: <span id="collegeOutput"></span></p>
+
+<div id="allData"></div>
+
+<script>
+// Write your code here
+let name = "Sourav";
+localStorage.setItem("name", name)
+const g = localStorage.getItem("name")
+console.log(g)
+document.getElementById("nameOutput").innerText= g
+let age  = "23";
+localStorage.setItem("age",age)
+const a = localStorage.getItem("age")
+document.getElementById("ageOutput").innerText= a
+let city = "Kkr";
+localStorage.setItem("city", city)
+
+let course = "mtech";
+localStorage.setItem("course", course)
+let college = "chitkara";
+localStorage.setItem("college", college)
+
+
+
+
+
+</script>
+</body>
+</html>

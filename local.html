@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Assignment 3: Events and Local Storage</h2>
+
+    <input type="text" id="inputBox" placeholder="Enter value" />
+    <button id="saveBtn">Save</button>
+    <button id="loadBtn">Load</button>
+
+    <p>Output: <span id="output"></span></p>
+
+    <h3>Counter</h3>
+    <p>Count: <span id="countValue"></span></p>
+    <button id="incBtn">Increment</button>
+    <button id="resetBtn">Reset</button>
+    <button id="btn1">Open another website</button>
+    <button id="btn2">close another website</button>
+
+    <script>
+      let ref;
+      document.getElementById("saveBtn").addEventListener("click", function () {
+        let value = document.getElementById("inputBox").value;
+
+        localStorage.setItem("inputData", value);
+      });
+
+      // Load button
+      document.getElementById("loadBtn").addEventListener("click", function () {
+        let data = localStorage.getItem("inputData");
+
+        document.getElementById("output").innerText = data;
+      });
+
+      // Show stored data on page load
+      window.addEventListener("load", function () {
+        let data = localStorage.getItem("inputData");
+
+        if (data !== null) {
+          document.getElementById("output").innerText = data;
+        }
+      });
+
+      // ----------- Counter Logic -----------
+
+      let count = 0;
+
+      // Load counter from localStorage on page load
+      window.addEventListener("load", function () {
+        let storedCount = localStorage.getItem("count");
+
+        if (storedCount !== null) {
+          count = parseInt(storedCount);
+        }
+
+        document.getElementById("countValue").innerText = count;
+      });
+
+      // Increment button
+      document.getElementById("incBtn").addEventListener("click", function () {
+        count++;
+
+        document.getElementById("countValue").innerText = count;
+
+        localStorage.setItem("count", count);
+      });
+
+      // Reset button
+      document
+        .getElementById("resetBtn")
+        .addEventListener("click", function () {
+          count = 0;
+
+          document.getElementById("countValue").innerText = count;
+
+          localStorage.setItem("count", count);
+        });
+
+      // ----------- Extra: Backup Data -----------
+
+      // Save backup data using same input
+      document.getElementById("saveBtn").addEventListener("click", function () {
+        let value = document.getElementById("inputBox").value;
+
+        localStorage.setItem("backupData", value);
+      });
+
+      document.getElementById("btn1").addEventListener("click", function () {
+        ref = window.open("https://www.gfg.com/");
+        console.log(ref);
+      });
+      document.getElementById("btn2").addEventListener("click", function () {
+        if (ref) {
+          ref.close(); // close opened tab
+        }
+      });
+    </script>
+  </body>
+</html>
