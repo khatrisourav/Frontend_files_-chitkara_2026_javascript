@@ -42,19 +42,17 @@
       //   }
       //   else{
       //      console.log("user cannot vote");
-
-      //   let e = window.setInterval(()=>{
-
-      //     let count = 0;
-      //     if (count <5){
-      //         console.log("piyus")
-      //     }
-      //     else{
-      //         clearInterval(extends)
-      //     }
-      //     count++
-
-      //   }, 5000)
+      let e;
+      let count = 0;
+      e = window.setInterval(() => {
+        if (count < 5) {
+          console.log(count);
+          console.log("piyus");
+        } else {
+          clearInterval(e);
+        }
+        count++;
+      }, 1000);
 
       // setInterval(function(){
       //     console.log("piyush")
