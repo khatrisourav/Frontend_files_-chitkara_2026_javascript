@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1></h1>
+    <span></span>
+    <script>
+      // function phonenumber() {
+      //   document.querySelector("span").textContent +=  "9587";
+      // }
+      // function isFaculty(callbackphonenumber) {
+      //   document.querySelector("span").textContent = "true";
+      //   callbackphonenumber()
+      // }
+      // function showUserDetails(fname, lname, callbackisFaculty) {
+      //   document.querySelector("h1").textContent = `${fname} ${lname}`;
+      //   callbackisFaculty(phonenumber);
+      // }
+
+      // function createUserDetailsandshow(callback) {
+      //   let firstName = "Sourabh";
+      //   let lastName = "Batra";
+      //   console.log(firstName, lastName);
+      //   callback(firstName, lastName, isFaculty);
+      // }
+      // createUserDetailsandshow(showUserDetails);
+
+      // console.log("hello world");
+      // for (let i = 0;i<100000;i++){
+
+      //   console.log(i)
+
+      // }
+      // console.log("end")
+
+      function webpage(name) {
+        const sp = document.querySelector("span");
+        sp.textContent= `hello ${name}`
+      }
+
+      function greet(name , callbackwebpage) {
+        console.log("hello" + name);
+        callbackwebpage(name)
+
+      }
+      function process(callbackgreet) {
+        let name = "sourav";
+        callbackgreet(name ,webpage);
+      }
+      process(greet);
+    </script>
+  </body>
+</html>
